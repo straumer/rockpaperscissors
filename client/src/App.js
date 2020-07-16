@@ -1,8 +1,9 @@
 import React, { Component } from "react";
 import SimpleStorageContract from "./contracts/SimpleStorage.json";
 import getWeb3 from "./getWeb3";
+import Button from 'react-bulma-components/lib/components/button';
 
-import "./App.css";
+import "./App.scss";
 
 class App extends Component {
   state = { storageValue: 0, web3: null, accounts: null, contract: null };
@@ -64,6 +65,7 @@ class App extends Component {
         <p>
           Try changing the value stored on <strong>line 40</strong> of App.js.
         </p>
+        <Button color="primary">My bulma button</Button>
         <div>The stored value is: {this.state.storageValue}</div>
       </div>
     );
