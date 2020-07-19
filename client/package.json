@@ -1,4 +1,5 @@
 {
+  "homepage" : "https://netveldi.com/rock-paper-scissors",
   "name": "client",
   "version": "0.1.0",
   "private": true,
