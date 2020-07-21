@@ -3,9 +3,14 @@ import SimpleStorageContract from "./contracts/SimpleStorage.json";
 import getWeb3 from "./getWeb3";
 import Button from 'react-bulma-components/lib/components/button';
 import Section from 'react-bulma-components/lib/components/section';
+import Hero from 'react-bulma-components/lib/components/hero';
 import Container from 'react-bulma-components/lib/components/container';
+import Box from 'react-bulma-components/lib/components/box';
 import Columns from 'react-bulma-components/lib/components/columns';
 import "./App.scss";
+import rock from './img/rock.svg';
+import paper from './img/paper.svg';
+import scissors from './img/scissors.svg';
 
 // Rock Paper Scissors App
 class App extends Component {
@@ -60,18 +65,30 @@ class App extends Component {
   render() {
     if (!this.state.web3) {
       return (
-        <Section className="is-fullheight">
-          <Columns className="is-mobile is-centered">
-            <Columns.Column className="is-half">
-              <Columns className="is-mobile is-centered">
-                <Columns.Column>
-                </Columns.Column>
-                <Columns.Column>
+        <Hero className="is-fullheight">
+          <Hero.Head>
+          </Hero.Head>
+          <Hero.Body>
+            <Container className="has-text-centered">
+              <Columns className="is-centered">
+                <Columns.Column className="is-two-thirds-tablet is-half-desktop is-two-fifths-fullhd">
+                  <Box>
+                    <Columns className="is-mobile">
+                      <Columns.Column>
+                        <img src={paper}/>
+                      </Columns.Column>
+                      <Columns.Column>
+                        <img src={rock}/>
+                      </Columns.Column>
+                    </Columns>
+                  </Box>
                 </Columns.Column>
               </Columns>
-            </Columns.Column>
-          </Columns>
-        </Section>
+            </Container>
+          </Hero.Body>
+          <Hero.Footer>
+          </Hero.Footer>
+        </Hero>
       );
     }
     return (
