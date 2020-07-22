@@ -8,9 +8,7 @@ import Container from 'react-bulma-components/lib/components/container';
 import Box from 'react-bulma-components/lib/components/box';
 import Columns from 'react-bulma-components/lib/components/columns';
 import "./App.scss";
-import rock from './img/rock.svg';
-import paper from './img/paper.svg';
-import scissors from './img/scissors.svg';
+import RockPaperScissorsPicker from "./RockPaperScissorsPicker";
 
 // Rock Paper Scissors App
 class App extends Component {
@@ -75,10 +73,10 @@ class App extends Component {
                   <Box>
                     <Columns className="is-mobile">
                       <Columns.Column>
-                        <img src={paper}/>
+                        <RockPaperScissorsPicker name="player1pick"/>
                       </Columns.Column>
                       <Columns.Column>
-                        <img src={rock}/>
+                        <RockPaperScissorsPicker name="player2pick"/>
                       </Columns.Column>
                     </Columns>
                   </Box>

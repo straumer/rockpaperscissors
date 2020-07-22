@@ -1,5 +1,5 @@
 {
-  "homepage" : "https://netveldi.com/rock-paper-scissors",
+  "homepage": "https://netveldi.com/rock-paper-scissors",
   "name": "client",
   "version": "0.1.0",
   "private": true,
@@ -49,6 +49,8 @@
     "react-bulma-components": "^3.4.0",
     "react-dev-utils": "^9.1.0",
     "react-dom": "16.11.0",
+    "react-redux": "^7.2.0",
+    "redux": "^4.0.5",
     "resolve": "1.12.0",
     "resolve-url-loader": "3.1.0",
     "sass-loader": "7.2.0",
