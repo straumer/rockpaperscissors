@@ -9,6 +9,19 @@ import Box from 'react-bulma-components/lib/components/box';
 import Columns from 'react-bulma-components/lib/components/columns';
 import "./App.scss";
 import RockPaperScissorsPicker from "./RockPaperScissorsPicker";
+import { createStore } from 'redux';
+import { Provider } from 'react-redux';
+
+const initialState = {
+    count: 0
+}
+
+function reducer(state = initialState, action) {
+  console.log('reducer', state, action);
+  return state;
+}
+
+const store = createStore(reducer);
 
 // Rock Paper Scissors App
 class App extends Component {
@@ -63,30 +76,32 @@ class App extends Component {
   render() {
     if (!this.state.web3) {
       return (
-        <Hero className="is-fullheight">
-          <Hero.Head>
-          </Hero.Head>
-          <Hero.Body>
-            <Container className="has-text-centered">
-              <Columns className="is-centered">
-                <Columns.Column className="is-two-thirds-tablet is-half-desktop is-two-fifths-fullhd">
-                  <Box>
-                    <Columns className="is-mobile">
-                      <Columns.Column>
-                        <RockPaperScissorsPicker name="player1pick"/>
-                      </Columns.Column>
-                      <Columns.Column>
-                        <RockPaperScissorsPicker name="player2pick"/>
-                      </Columns.Column>
-                    </Columns>
-                  </Box>
-                </Columns.Column>
-              </Columns>
-            </Container>
-          </Hero.Body>
-          <Hero.Footer>
-          </Hero.Footer>
-        </Hero>
+        <Provider store={store}>
+          <Hero className="is-fullheight">
+            <Hero.Head>
+            </Hero.Head>
+            <Hero.Body>
+              <Container className="has-text-centered">
+                <Columns className="is-centered">
+                  <Columns.Column className="is-two-thirds-tablet is-half-desktop is-two-fifths-fullhd">
+                    <Box>
+                      <Columns className="is-mobile">
+                        <Columns.Column>
+                          <RockPaperScissorsPicker name="player1pick"/>
+                        </Columns.Column>
+                        <Columns.Column>
+                          <RockPaperScissorsPicker name="player2pick"/>
+                        </Columns.Column>
+                      </Columns>
+                    </Box>
+                  </Columns.Column>
+                </Columns>
+              </Container>
+            </Hero.Body>
+            <Hero.Footer>
+            </Hero.Footer>
+          </Hero>
+        </Provider>
       );
     }
     return (
