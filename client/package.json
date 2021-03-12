@@ -47,7 +47,7 @@
     "react": "16.11.0",
     "react-app-polyfill": "^1.0.4",
     "react-bulma-components": "^3.4.0",
-    "react-dev-utils": "^9.1.0",
+    "react-dev-utils": "^11.0.4",
     "react-dom": "16.11.0",
     "react-redux": "^7.2.0",
     "redux": "^4.0.5",
